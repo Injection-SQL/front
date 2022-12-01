@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_awesome_buttons/flutter_awesome_buttons.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,17 +35,51 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
-            Text("PICOLO"),
-          ],
-        ),
-      ),
+        child: SizedBox(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(50, 50, 50, 50),
+            child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+              elevation: 12,
+              child:
+              Padding(
+                padding: const EdgeInsets.fromLTRB(100, 100, 100, 100),
+                child: Column(
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(0, 0, 0, 100),
+                      child: Text(
+                      "PICOLO SIDA",
+                        style: TextStyle(
+                            fontSize: 50, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                      child: SuccessButton(
+                        title: "Jouer !",
+                        onPressed: () {
+                        },
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                      child: SuccessButton(
+                        title: "Info",
+                        onPressed: () {
+                        },
+                      ),
+                    ),
+                  ]
+                )
+              ),
+            ),
+          )
+        )
+      )
     );
   }
 }
