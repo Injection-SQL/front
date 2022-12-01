@@ -1,5 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_animated_button/flutter_animated_button.dart';
 import 'package:flutter_awesome_buttons/flutter_awesome_buttons.dart';
+import 'package:video_player/video_player.dart';
+// @dart=2.9
 
 void main() {
   runApp(const MyApp());
@@ -26,19 +31,41 @@ class MyHomePage extends StatefulWidget {
 
   final String title;
 
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+/*
+  late VideoPlayerController controller;
 
+  @override
+  initState() {
+    controller = VideoPlayerController.asset('video.mp4');
+    controller.initialize();
+    controller.play();
+    controller.addListener(() {
+      setState(() {});
+    });
+    controller.initialize().then((value){
+      setState(() {});
+    });
+
+  }*/
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.grey,
       body: Center(
-        child: SizedBox(
+        child: Stack(
+        children: [
+          //VideoPlayer(controller),
+        SizedBox(
+          width: MediaQuery.of(context).size.width,
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(50, 50, 50, 50),
+            padding: const EdgeInsets.fromLTRB(200, 100, 200, 100),
             child: Card(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0),
@@ -47,7 +74,8 @@ class _MyHomePageState extends State<MyHomePage> {
               child:
               Padding(
                 padding: const EdgeInsets.fromLTRB(100, 100, 100, 100),
-                child: Column(
+                child: SingleChildScrollView(
+                  child: Column(
                   children: [
                     const Padding(
                       padding: EdgeInsets.fromLTRB(0, 0, 0, 100),
@@ -59,27 +87,60 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                      child: SuccessButton(
-                        title: "Jouer !",
-                        onPressed: () {
-                        },
+                      child: AnimatedButton(
+                        text: 'Jouer',
+                        onPress: () {  },
+                        width: 100,
+                        gradient: const LinearGradient(colors: [Colors.green, Colors.green]),
+                        selectedGradientColor: const LinearGradient(colors: [Colors.black12, Colors.black12]),
+                        transitionType: TransitionType.BOTTOM_CENTER_ROUNDER,
+                        selectedTextColor: Colors.white,
+                        isReverse: true,
+                        borderColor: Colors.white,
+                        borderRadius: 5,
+                        animatedOn: AnimatedOn.onHover,
+                        textStyle: const TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w300),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                      child: SuccessButton(
-                        title: "Info",
-                        onPressed: () {
-                        },
+                      child: AnimatedButton(
+                        text: 'Info',
+                        onPress: () {  },
+                        width: 100,
+                        gradient: const LinearGradient(colors: [Colors.blue, Colors.blue]),
+                        selectedGradientColor: const LinearGradient(colors: [Colors.black12, Colors.black12]),
+                        transitionType: TransitionType.BOTTOM_CENTER_ROUNDER,
+                        selectedTextColor: Colors.white,
+                        isReverse: true,
+                        borderColor: Colors.white,
+                        borderRadius: 5,
+                        animatedOn: AnimatedOn.onHover,
+                        textStyle: const TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w300),
                       ),
                     ),
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(0, 200, 0, 0),
+                      child: Center(child:Text(
+                        "NUIT DE L'INFO 2022 - Killyan Bour - Bastien BRISSON - Yoann FERNANDEZ - ROBILLIARD Rémi"),
+                      ),
+                      ),
                   ]
                 )
               ),
             ),
           )
         )
-      )
+      ),
+      ]),
+    ),
+
     );
   }
 }
