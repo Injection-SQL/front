@@ -5,6 +5,8 @@
 */
 
 import 'package:flutter/material.dart';
+import 'package:flutter_animated_button/flutter_animated_button.dart';
+import 'package:nuit22/questionsScreen.dart';
 
 class Prepare extends StatefulWidget {
   const Prepare({super.key});
@@ -52,14 +54,30 @@ class PrepareState extends State<Prepare> {
                               return null;
                             },
                           ),
-                          ElevatedButton(
-                            onPressed: () {
-                              if (_formKey.currentState!.validate()) {
-                                _addPlayer(name.text.toString());
-                                name.clear();
-                              }
-                            },
-                            child: const Text('Ajouter le joueur'),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                            child: AnimatedButton(
+                              text: 'Ajouter le joueur',
+                              onPress: () {
+                                if (_formKey.currentState!.validate()) {
+                                  _addPlayer(name.text.toString());
+                                  name.clear();
+                                }
+                              },
+                              width: 300,
+                              gradient: const LinearGradient(colors: [Colors.green, Colors.green]),
+                              selectedGradientColor: const LinearGradient(colors: [Colors.black12, Colors.black12]),
+                              transitionType: TransitionType.BOTTOM_CENTER_ROUNDER,
+                              selectedTextColor: Colors.white,
+                              isReverse: true,
+                              borderColor: Colors.white,
+                              borderRadius: 5,
+                              animatedOn: AnimatedOn.onHover,
+                              textStyle: const TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w300),
+                            ),
                           ),
                         ],
                       ),
@@ -76,7 +94,7 @@ class PrepareState extends State<Prepare> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
-                                Text('${players[index]}'),
+                                Text(players[index]),
                                 ElevatedButton(
                                   child: const Text('Remove'),
                                   onPressed: () => _removePlayer(index),
@@ -87,9 +105,27 @@ class PrepareState extends State<Prepare> {
                         );
                       },
                     ),
-                    ElevatedButton(
-                      onPressed: () => _startGame(),
-                      child: const Text('Lancer le jeu'),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                      child: AnimatedButton(
+                        text: 'Lancer le jeu',
+                        onPress: () {
+                          _startGame(players);
+                        },
+                        width: 300,
+                        gradient: const LinearGradient(colors: [Colors.green, Colors.green]),
+                        selectedGradientColor: const LinearGradient(colors: [Colors.black12, Colors.black12]),
+                        transitionType: TransitionType.BOTTOM_CENTER_ROUNDER,
+                        selectedTextColor: Colors.white,
+                        isReverse: true,
+                        borderColor: Colors.white,
+                        borderRadius: 5,
+                        animatedOn: AnimatedOn.onHover,
+                        textStyle: const TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w300),
+                      ),
                     ),
                   ],
                 ),
@@ -109,7 +145,10 @@ class PrepareState extends State<Prepare> {
     setState(() => players.removeAt(id));
   }
 
-  void _startGame() {
-    // TODO navigation vers écran de jeu avec la liste des joueurs en paramètres
+  void _startGame(List<String> players) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => QuestionsScreen(players: players)),
+  );
   }
 }

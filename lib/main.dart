@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_animated_button/flutter_animated_button.dart';
 import 'package:flutter_awesome_buttons/flutter_awesome_buttons.dart';
+import 'package:nuit22/prepare.dart';
 import 'package:nuit22/questionsScreen.dart';
 import 'package:video_player/video_player.dart';
 // @dart=2.9
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: const QuestionsScreen(title: 'PICOLO SIDA'),
+      home: const MyHomePage(title: 'PICOLO SIDA'),
     );
   }
 }
@@ -90,10 +91,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                       child: AnimatedButton(
                         text: 'Jouer',
-                        onPress: () { MaterialPageRoute(
-                            builder: (context) =>
-                                const QuestionsScreen(title: 'Question'),
-                          ); },
+                        onPress: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const Prepare()),
+                          );
+                        },
                         width: 100,
                         gradient: const LinearGradient(colors: [Colors.green, Colors.green]),
                         selectedGradientColor: const LinearGradient(colors: [Colors.black12, Colors.black12]),

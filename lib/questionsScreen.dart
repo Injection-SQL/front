@@ -7,9 +7,9 @@ import 'package:nuit22/questionType.dart';
 import 'package:video_player/video_player.dart';
 
 class QuestionsScreen extends StatefulWidget {
-  const QuestionsScreen({super.key, required this.title});
+  const QuestionsScreen({super.key, required this.players});
 
-  final String title;
+  final List<String> players;
 
 
   @override
