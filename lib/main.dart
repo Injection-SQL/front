@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
         SizedBox(
           width: MediaQuery.of(context).size.width,
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(200, 100, 200, 100),
+            padding: const EdgeInsets.fromLTRB(100, 100, 100, 100),
             child: Card(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0),
@@ -133,7 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     const Padding(
-                      padding: EdgeInsets.fromLTRB(0, 200, 0, 0),
+                      padding: EdgeInsets.fromLTRB(0, 100, 0, 0),
                       child: Center(child:Text(
                         "NUIT DE L'INFO 2022 - Killyan BOUR - Bastien BRISSON - Yoann FERNANDEZ - Rémi ROBILLIARD"),
                       ),
