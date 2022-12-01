@@ -23,7 +23,7 @@
 {"type" :"QUESTION", "text": "Peut-on se faire dépister gratuitement? \nBois 2 gorgées si tu te trompes", "answer": "Oui, dans un centre CEGIDD", "link": "https://www.sida-info-service.org/quel-est-le-cout-d-un-test-de/", "player": "one"},
 {"type" :"QUESTION", "text": "Dans quels cas l'utilisation d'un sextoy représente un risque de contamination au VIH ? \nBois 2 gorgées si tu te trompes", "answer": "Lorsqu'il est utilisé par plus d'une personne", "link": "https://www.sida-info-service.org/j-ai-utilise-un-sex-toy-c-est/", "player": "one"},
 {"type" :"CHOICE", "text": "Recevoir du sperme dans l'oeil représente-t-il un risque de transmission du VIH ? \nBois 3 gorgées si tu te trompes", "choices": ["Oui", "Non"], "answer": 1, "link": "https://www.sida-info-service.org/j-ai-recu-du-sperme-dans-l-oeil/", "player": "one"},
-{"type" :"CLOSE", "text": "Combien d'autotests VIH on été vendus en pharmacie en 2021, à 5000 près. \nBois 2 gorgées si tu te trompes", "answer": "65 000", "link": "https://www.sida-info-service.org/quelques-chiffres-sur-le-vih-sida/", "player": "all"},
+{"type" :"QUESTION", "text": "Combien d'autotests VIH on été vendus en pharmacie en 2021, à 5000 près. \nBois 2 gorgées si tu te trompes", "answer": "65 000", "link": "https://www.sida-info-service.org/quelques-chiffres-sur-le-vih-sida/", "player": "all"},
 {"type" :"QUESTION", "text": "Quel sexe est le plus touché par le VIH en 2021? \nBois 4 gorgées si tu te trompes", "answer": "C'est le sexe féminin.", "link": "https://www.sida-info-service.org/quelques-chiffres-sur-le-vih-sida2312/", "player": "one"},
 {"type" :"QUESTION", "text": "Que signifie le terme IST\nBois 2 gorgées si tu te trompes", "answer": "Infections Sexuellement Transmissibles", "link": "", "player": "one"},
 ]
