@@ -6,11 +6,9 @@
 
 import 'package:flutter/material.dart';
 
-
 class Pause extends StatelessWidget {
   const Pause({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -30,16 +28,12 @@ class Pause extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(bottom: 50),
                     child: ElevatedButton(
-                    onPressed: () {
-
-                    },
-                    child: Text("Redémarrer"),
-                  ),
+                      onPressed: () {},
+                      child: Text("Redémarrer"),
+                    ),
                   ),
                   ElevatedButton(
-                    onPressed: () {
-
-                    },
+                    onPressed: () {},
                     child: Text("Pour en savoir plus"),
                   ),
                 ],
