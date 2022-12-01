@@ -87,11 +87,11 @@ class PrepareState extends State<Prepare> {
                         );
                       },
                     ),
+                    ElevatedButton(
+                      onPressed: () => _startGame(),
+                      child: const Text('Lancer le jeu'),
+                    ),
                   ],
-                  ElevatedButton(
-                    onPressed: () => _startGame(),
-                    child: const Text('Lancer le jeu'),
-                  ),
                 ),
               ),
             ),
