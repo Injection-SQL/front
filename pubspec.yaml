@@ -43,7 +43,8 @@ dependencies:
   asset_cache: ^2.0.0
 
 assets:
-  - assets/
+  - assets/questions.json
+  - assets/questionsIST.json
 
 dev_dependencies:
   flutter_test:

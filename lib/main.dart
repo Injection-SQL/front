@@ -4,14 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animated_button/flutter_animated_button.dart';
 import 'package:flutter_awesome_buttons/flutter_awesome_buttons.dart';
 import 'package:nuit22/prepare.dart';
+import 'package:nuit22/game.dart';
+import 'package:nuit22/util.dart';
 import 'package:video_player/video_player.dart';
 
 import 'infos.dart';
 
-final jsonCache = JsonAssetCache(basePath: "assets/");
+//final jsonCache = JsonAssetCache(basePath: "assets/");
 
-void main() {
-  WidgetsFlutterBinding.ensureInitialized();
+void main() async {
+  //WidgetsFlutterBinding.ensureInitialized();
+  Util u = Util();
+  await u.initJSON();
   runApp(const MyApp());
 }
 
@@ -26,7 +30,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: const MyHomePage(title: "Picolo"),
+      //home: const MyHomePage(title: 'PICOLO SIDA'),
+      home: const Prepare(),
     );
   }
 }
@@ -151,8 +156,8 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         )
       ),
-    ]),
-    ),
-    );
+          ]
+              
+    )));
   }
 }
