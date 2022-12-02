@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animated_button/flutter_animated_button.dart';
 import 'package:flutter_awesome_buttons/flutter_awesome_buttons.dart';
 import 'package:nuit22/prepare.dart';
-import 'package:nuit22/questionsScreen.dart';
 import 'package:video_player/video_player.dart';
 
 import 'infos.dart';
