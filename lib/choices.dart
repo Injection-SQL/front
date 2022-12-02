@@ -2,24 +2,23 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-class Question extends StatefulWidget {
-  Question({Key? key, required this.q}) : super(key: key);
+class Choices extends StatefulWidget {
+  Choices({Key? key, required this.q}) : super(key: key);
 
   Map<String, dynamic> q = {};
 
   @override
-  State<Question> createState() => _QuestionState();
+  State<Choices> createState() => _ChoicesState();
 }
 
-class _QuestionState extends State<Question> {
+
+class _ChoicesState extends State<Choices> {
+
   List<Widget> body = <Widget>[];
-
-
   @override
   void initState() {
     super.initState();
     body.removeRange(0, body.length);
-
   }
 
   @override
@@ -48,15 +47,25 @@ class _QuestionState extends State<Question> {
       ));
     }
 
-    if (widget.q["answer"] != null) {
+    if (widget.q["choices"] != null) {
+      body.add(Text(
+        widget.q["choices"][0] + "\t" + widget.q["choices"][1],
+        style: const TextStyle(
+          fontSize: 20,
+        ),
+        textAlign: TextAlign.center,
+      ));
+    }
+
+    if (widget.q["answer"] != null && widget.q["choices"] != null) {
       body.add(
         ElevatedButton(
           onPressed: () {
             setState(() {
               //body.removeRange(0, body.length);
               body.add(Text(
-                "Réponse : " + widget.q["answer"],
-                style: const TextStyle(fontSize: 20)));
+                  "Réponse : " + widget.q["choices"][widget.q["answer"]],
+                  style: const TextStyle(fontSize: 20)));
             });
           },
           child: const Text("Voir réponse"),
@@ -67,7 +76,7 @@ class _QuestionState extends State<Question> {
     if (widget.q["link"] != null) {
       body.add(IconButton(
           onPressed: () {
-            launchUrlString(widget.q["link"].toString());
+            launchUrlString(widget.q["link"]);
           },
           icon: Icon(Icons.info_outline)));
     }

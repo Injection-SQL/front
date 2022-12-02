@@ -5,12 +5,10 @@ import 'dart:math';
 import 'package:asset_cache/asset_cache.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_animated_button/flutter_animated_button.dart';
-import 'package:flutter_awesome_buttons/flutter_awesome_buttons.dart';
-import 'package:video_player/video_player.dart';
-
-import 'package:nuit22/questionType.dart';
 import 'package:nuit22/questions.dart';
+
+import 'action.dart';
+import 'choices.dart';
 
 // number of questions we'll take from list
 final nb_questions = 20;
@@ -57,8 +55,6 @@ class _Game extends State<Game> {
     var tmpIST = randomQuestionsIST.getRange(0, nb_questions_ist).toList();
 
     tmp.addAll(tmpIST);
-    print("====================");
-
     for (var elem in tmp) {
       questions.add(elem);
     }
@@ -73,6 +69,15 @@ class _Game extends State<Game> {
 
   @override
   Widget build(BuildContext context) {
+    Widget widget = Question(
+      q: actualQuestion,
+    );
+
+    if (actualQuestion['type'].toString() == 'CHOICE') {
+      widget = Choices(q: actualQuestion);
+    } else if (actualQuestion['type'].toString() == 'ACTION') {
+      widget = Actionq(q: actualQuestion);
+    }
     if (isLoading) {
       return Scaffold(
         body: Center(
@@ -100,9 +105,7 @@ class _Game extends State<Game> {
                       child: Column(
                         children: <Widget>[
                           Text(currentPlayer),
-                          Question(
-                            q: actualQuestion,
-                          ),
+                          widget,
                           ElevatedButton(
                             onPressed: () => _nextQuestion(),
                             child: const Text('Suivant'),
