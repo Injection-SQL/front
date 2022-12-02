@@ -92,9 +92,13 @@ class _Game extends State<Game> {
                     padding: const EdgeInsets.fromLTRB(100, 100, 100, 100),
                     child: SingleChildScrollView(
                       child: Column(
-                        children: const [
+                        children: <Widget>[
                           QuestionType(
                             title: 'type',
+                          ),
+                          ElevatedButton(
+                            onPressed: () => _nextQuestion(),
+                            child: const Text('Suivant'),
                           ),
                         ],
                       ),
