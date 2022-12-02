@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
 
+import 'package:asset_cache/asset_cache.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animated_button/flutter_animated_button.dart';
@@ -14,6 +15,8 @@ import 'package:nuit22/questionType.dart';
 final nb_questions = 20;
 // number of questions we'll take from list about IST
 final nb_questions_ist = 10;
+
+final jsonCache = JsonAssetCache(basePath: ".");
 
 class Game extends StatefulWidget {
   const Game({super.key, required this.players});
@@ -52,6 +55,7 @@ class _Game extends State<Game> {
     var tmpIST = randomQuestionsIST.getRange(0, nb_questions_ist).toList();
 
     tmp.addAll(tmpIST);
+    print("====================");
 
     for (var elem in tmp) {
       questions.add(elem);
