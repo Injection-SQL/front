@@ -2,9 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_animated_button/flutter_animated_button.dart';
-import 'package:flutter_awesome_buttons/flutter_awesome_buttons.dart';
-import 'package:nuit22/prepare.dart';
-import 'package:video_player/video_player.dart';
+import 'dart:html' as html;
 
 import 'infos.dart';
 
@@ -69,7 +67,7 @@ class _Infos extends State<Infos> {
                                       padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                                       child: AnimatedButton(
                                         text: 'sida-info-service.org',
-                                        onPress: () {  },
+                                        onPress: () { html.window.open('https://www.sida-info-service.org/',"_blank"); },
                                         width: 300,
                                         gradient: const LinearGradient(colors: [Colors.blue, Colors.blue]),
                                         selectedGradientColor: const LinearGradient(colors: [Colors.black12, Colors.black12]),
@@ -89,7 +87,7 @@ class _Infos extends State<Infos> {
                                       padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                                       child: AnimatedButton(
                                         text: 'sexualites-info-sante.fr',
-                                        onPress: () {  },
+                                        onPress: () { html.window.open('https://www.sexualites-info-sante.fr/',"_blank"); },
                                         width: 300,
                                         gradient: const LinearGradient(colors: [Colors.blue, Colors.blue]),
                                         selectedGradientColor: const LinearGradient(colors: [Colors.black12, Colors.black12]),
@@ -109,7 +107,7 @@ class _Infos extends State<Infos> {
                                       padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                                       child: AnimatedButton(
                                         text: 'hepatites-info-service.org',
-                                        onPress: () {  },
+                                        onPress: () { html.window.open('https://www.hepatites-info-service.org/',"_blank"); },
                                         width: 300,
                                         gradient: const LinearGradient(colors: [Colors.blue, Colors.blue]),
                                         selectedGradientColor: const LinearGradient(colors: [Colors.black12, Colors.black12]),
@@ -129,7 +127,7 @@ class _Infos extends State<Infos> {
                                       padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                                       child: AnimatedButton(
                                         text: 'vih-info-soignants.fr',
-                                        onPress: () {  },
+                                        onPress: () { html.window.open('https://www.vih-info-soignants.fr/',"_blank");  },
                                         width: 300,
                                         gradient: const LinearGradient(colors: [Colors.blue, Colors.blue]),
                                         selectedGradientColor: const LinearGradient(colors: [Colors.black12, Colors.black12]),
@@ -149,7 +147,7 @@ class _Infos extends State<Infos> {
                                       padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                                       child: AnimatedButton(
                                         text: 'ligneazur.org',
-                                        onPress: () {  },
+                                        onPress: () { html.window.open('https://www.ligneazur.org/',"_blank"); },
                                         width: 300,
                                         gradient: const LinearGradient(colors: [Colors.blue, Colors.blue]),
                                         selectedGradientColor: const LinearGradient(colors: [Colors.black12, Colors.black12]),
