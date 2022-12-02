@@ -10,6 +10,7 @@ import 'package:flutter_awesome_buttons/flutter_awesome_buttons.dart';
 import 'package:video_player/video_player.dart';
 
 import 'package:nuit22/questionType.dart';
+import 'package:nuit22/questions.dart';
 
 // number of questions we'll take from list
 final nb_questions = 20;
@@ -99,8 +100,8 @@ class _Game extends State<Game> {
                       child: Column(
                         children: <Widget>[
                           Text(currentPlayer),
-                          QuestionType(
-                            title: 'type',
+                          Question(
+                            q: actualQuestion,
                           ),
                           ElevatedButton(
                             onPressed: () => _nextQuestion(),
