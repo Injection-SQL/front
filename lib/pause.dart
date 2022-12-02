@@ -29,12 +29,12 @@ class Pause extends StatelessWidget {
                     padding: const EdgeInsets.only(bottom: 50),
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text("Redémarrer"),
+                      child: const Text("Redémarrer"),
                     ),
                   ),
                   ElevatedButton(
                     onPressed: () {},
-                    child: Text("Pour en savoir plus"),
+                    child: const Text("Pour en savoir plus"),
                   ),
                 ],
               ),

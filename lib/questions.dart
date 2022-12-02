@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class Question extends StatefulWidget {
-  Question({Key? key, required this.q}) : super(key: key);
+  const Question({Key? key, required this.q}) : super(key: key);
 
-  Map<String, dynamic> q = {};
+  final Map<String, dynamic> q;
 
   @override
   State<Question> createState() => _QuestionState();
@@ -14,12 +13,10 @@ class Question extends StatefulWidget {
 class _QuestionState extends State<Question> {
   List<Widget> body = <Widget>[];
 
-
   @override
   void initState() {
     super.initState();
     body.removeRange(0, body.length);
-
   }
 
   @override
@@ -54,9 +51,8 @@ class _QuestionState extends State<Question> {
           onPressed: () {
             setState(() {
               //body.removeRange(0, body.length);
-              body.add(Text(
-                "Réponse : " + widget.q["answer"],
-                style: const TextStyle(fontSize: 20)));
+              body.add(Text("Réponse : ${widget.q["answer"]}",
+                  style: const TextStyle(fontSize: 20)));
             });
           },
           child: const Text("Voir réponse"),
@@ -69,13 +65,11 @@ class _QuestionState extends State<Question> {
           onPressed: () {
             launchUrlString(widget.q["link"].toString());
           },
-          icon: Icon(Icons.info_outline)));
+          icon: const Icon(Icons.info_outline)));
     }
 
-    return Container(
-      child: Column(
-        children: body,
-      ),
+    return Column(
+      children: body,
     );
   }
 }

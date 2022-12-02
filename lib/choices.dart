@@ -1,19 +1,16 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class Choices extends StatefulWidget {
-  Choices({Key? key, required this.q}) : super(key: key);
+  const Choices({Key? key, required this.q}) : super(key: key);
 
-  Map<String, dynamic> q = {};
+  final Map<String, dynamic> q;
 
   @override
   State<Choices> createState() => _ChoicesState();
 }
 
-
 class _ChoicesState extends State<Choices> {
-
   List<Widget> body = <Widget>[];
   @override
   void initState() {
@@ -64,7 +61,7 @@ class _ChoicesState extends State<Choices> {
             setState(() {
               //body.removeRange(0, body.length);
               body.add(Text(
-                  "Réponse : " + widget.q["choices"][widget.q["answer"]],
+                  "Réponse : ${widget.q["choices"][widget.q["answer"]]}",
                   style: const TextStyle(fontSize: 20)));
             });
           },
@@ -78,13 +75,11 @@ class _ChoicesState extends State<Choices> {
           onPressed: () {
             launchUrlString(widget.q["link"]);
           },
-          icon: Icon(Icons.info_outline)));
+          icon: const Icon(Icons.info_outline)));
     }
 
-    return Container(
-      child: Column(
-        children: body,
-      ),
+    return Column(
+      children: body,
     );
   }
 }
