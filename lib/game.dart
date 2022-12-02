@@ -9,7 +9,6 @@ import 'package:flutter_awesome_buttons/flutter_awesome_buttons.dart';
 import 'package:video_player/video_player.dart';
 
 import 'package:nuit22/questionType.dart';
-import 'package:nuit22/util.dart';
 
 // number of questions we'll take from list
 final nb_questions = 20;
@@ -25,9 +24,6 @@ class Game extends StatefulWidget {
   State<Game> createState() => _Game();
 }
 
-// TODO init une liste de X questions
-
-// TODO attribut avec la question actuelle
 // TODO sélectionner une personne au pif selon le type de question
 // TODO bouton suivant
 

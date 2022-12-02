@@ -5,7 +5,6 @@ import 'package:flutter_animated_button/flutter_animated_button.dart';
 import 'package:flutter_awesome_buttons/flutter_awesome_buttons.dart';
 import 'package:nuit22/prepare.dart';
 import 'package:nuit22/game.dart';
-import 'package:nuit22/util.dart';
 import 'package:video_player/video_player.dart';
 
 import 'infos.dart';
@@ -13,9 +12,6 @@ import 'infos.dart';
 //final jsonCache = JsonAssetCache(basePath: "assets/");
 
 void main() async {
-  //WidgetsFlutterBinding.ensureInitialized();
-  Util u = Util();
-  await u.initJSON();
   runApp(const MyApp());
 }
 
