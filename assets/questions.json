@@ -30,7 +30,7 @@
 {"type" :"ACTION", "title": "Un peu de sport", "text": "Fait 20 pompes ou bois 4 gorgées", "player": "one"},
 {"type" :"ACTION", "text": "Saute 40 fois ou bois 2 gorgées.", "player": "one"},
 {"type" :"ACTION", "text": "Boit 3 gorgées et en distribue 6.", "player": "one"},
-{"type" :"ACTION", "title": "Combat de pompes", "text": "Défi X dans un duel de pompes, le perdant fini son verre", "player": "other"},
+{"type" :"ACTION", "title": "Combat de pompes", "text": "Défi la personne à ta droite dans un duel de pompes, le perdant fini son verre", "player": "one"},
 {"type" :"ACTION", "text": "Tu préfères gagner au loto ou vivre deux fois plus longtemps ? \nLa minorité boit 3 gorgées.", "player": "all"},
 {"type" :"ACTION", "text": "Tu préfères avoir le pouvoir de te sortir d’une situation inconfortable ou de mettre les autres dans une situation inconfortable ?\nLa majorité boit 4 gorgées", "player": "all"},
 {"type" :"ACTION", "text": "Bois 4 gorgées si tu as déjà eu des relations sexuelles dans un lieu public, car c'est un délit. \n Distribues les sinon", "player": "one"},
