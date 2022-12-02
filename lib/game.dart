@@ -34,6 +34,7 @@ class _Game extends State<Game> {
   List<Map<String, dynamic>> questions = [];
   Map<String, dynamic> actualQuestion = {};
   bool isLoading = true;
+  String currentPlayer = '';
 
   @override
   void initState() {
@@ -97,6 +98,7 @@ class _Game extends State<Game> {
                     child: SingleChildScrollView(
                       child: Column(
                         children: <Widget>[
+                          Text(currentPlayer),
                           QuestionType(
                             title: 'type',
                           ),
@@ -119,8 +121,10 @@ class _Game extends State<Game> {
 
   _nextQuestion() {
     if (questions.length > 0) {
+      var random = new Random();
       setState(() {
         actualQuestion = questions.removeLast();
+        currentPlayer = widget.players[random.nextInt(widget.players.length)];
       });
     }
   }
