@@ -26,8 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      //home: const MyHomePage(title: 'PICOLO SIDA'),
-      home: const Prepare(),
+      home: const MyHomePage(title: 'PICOLO SIDA'),
     );
   }
 }
