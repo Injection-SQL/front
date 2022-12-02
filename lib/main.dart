@@ -1,13 +1,12 @@
 import 'dart:async';
 
-import 'package:asset_cache/asset_cache.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animated_button/flutter_animated_button.dart';
 import 'package:flutter_awesome_buttons/flutter_awesome_buttons.dart';
 import 'package:nuit22/prepare.dart';
-import 'package:nuit22/questionsScreen.dart';
 import 'package:video_player/video_player.dart';
-// @dart=2.9
+
+import 'infos.dart';
 
 final jsonCache = JsonAssetCache(basePath: "assets/");
 
@@ -27,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: const MyHomePage(title: 'PICOLO SIDA'),
+      home: const MyHomePage(title: "Picolo"),
     );
   }
 }
@@ -118,7 +117,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                       child: AnimatedButton(
                         text: 'Info',
-                        onPress: () {  },
+                        onPress: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const Infos()),
+                          );
+                        },
                         width: 100,
                         gradient: const LinearGradient(colors: [Colors.blue, Colors.blue]),
                         selectedGradientColor: const LinearGradient(colors: [Colors.black12, Colors.black12]),
@@ -147,6 +151,8 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         )
       ),
+    ]),
+    ),
     );
   }
 }
