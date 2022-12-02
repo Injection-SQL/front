@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:asset_cache/asset_cache.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animated_button/flutter_animated_button.dart';
 import 'package:flutter_awesome_buttons/flutter_awesome_buttons.dart';
@@ -8,7 +9,10 @@ import 'package:nuit22/questionsScreen.dart';
 import 'package:video_player/video_player.dart';
 // @dart=2.9
 
+final jsonCache = JsonAssetCache(basePath: "assets/");
+
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -33,7 +37,6 @@ class MyHomePage extends StatefulWidget {
 
   final String title;
 
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -55,14 +58,13 @@ class _MyHomePageState extends State<MyHomePage> {
     });
 
   }*/
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey,
+      backgroundColor: Colors.grey,
       body: Center(
-        child: Stack(
-        children: [
+        child: Stack(children: [
           //VideoPlayer(controller),
         SizedBox(
           width: MediaQuery.of(context).size.width,
@@ -145,9 +147,6 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         )
       ),
-      ]),
-    ),
-
     );
   }
 }

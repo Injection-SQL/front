@@ -40,6 +40,10 @@ dependencies:
   flutter_animated_button: ^2.0.2
   video_player: ^2.2.18
   modals: ^1.0.0+1
+  asset_cache: ^2.0.0
+
+assets:
+  - assets/
 
 dev_dependencies:
   flutter_test:
