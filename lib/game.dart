@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
 
-import 'package:asset_cache/asset_cache.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animated_button/flutter_animated_button.dart';
@@ -23,12 +22,6 @@ class Game extends StatefulWidget {
   const Game({super.key, required this.players});
 
   final List<String> players;
-
-  /*
-  final db = Localstore.instance;
-  final questions = await db.collection('data').get();
-  final questionsIST = await db.collection('dataIST').get();
-  */
 
   @override
   State<Game> createState() => _Game();
@@ -52,41 +45,19 @@ class _Game extends State<Game> {
   }
 
   Future<void> _loadJson() async {
-    /*
-    print("====================");
-    //final questionsJSON = await jsonCache.load('questions.json');
-    //final questionsJSONIST = await jsonCache.load('questionsIST.json');
     final String responseJSON = await rootBundle.loadString('questions.json');
     final questionsJSON = await json.decode(responseJSON);
-    print("====================");
-    //final String responseISTJSON = await rootBundle.loadString('questionsIST.json');
-    print("====================");
-    print("====================");
-    //final questionsJSONIST = await json.decode(responseISTJSON);
-    final questionsJSONIST = questionsJSON.toList();
+    final String responseISTJSON = await rootBundle.loadString('questionsIST.json');
+    final questionsJSONIST = await json.decode(responseISTJSON);
 
-
-    */
-    var u = Util();
-    //final questionsJSONIST = await jsonCache.load('questionsIST.json');
-    print("====================");
-    //await DefaultAssetBundle.of(context).loadString("assets/data.json");
-    print("====================");
-    var randomQuestions = u.getQuestionsJSON().toList();
-    print("====================");
-    var randomQuestionsIST = u.getQuestionsJSONIST().toList();
-    print("====================");
+    var randomQuestions = questionsJSON.toList();
+    var randomQuestionsIST = questionsJSONIST.toList();
     randomQuestions.shuffle();
     randomQuestionsIST.shuffle();
-    print("====================");
     var tmp = randomQuestions.getRange(0, nb_questions).toList();
-    print("====================");
     var tmpIST = randomQuestionsIST.getRange(0, nb_questions_ist).toList();
-    print("====================");
-
 
     tmp.addAll(tmpIST);
-    print("====================");
 
     for (var elem in tmp) {
       questions.add(elem);
@@ -98,15 +69,10 @@ class _Game extends State<Game> {
       questions = questions.toList();
       isLoading = false;
     });
-    print(actualQuestion);
-    print("====================");
   }
 
   @override
   Widget build(BuildContext context) {
-    print("=---------------------");
-    print(actualQuestion);
-
     if (isLoading) {
       return Scaffold(
         body: Center(
