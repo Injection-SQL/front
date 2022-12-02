@@ -30,6 +30,7 @@ class _Game extends State<Game> {
   List<Map<String, dynamic>> questions = [];
   Map<String, dynamic> actualQuestion = {};
   bool isLoading = true;
+  bool isFinish = false;
   String currentPlayer = '';
 
   @override
@@ -76,10 +77,17 @@ class _Game extends State<Game> {
     } else if (actualQuestion['type'].toString() == 'ACTION') {
       widget = Actionq(q: actualQuestion);
     }
+
     if (isLoading) {
       return const Scaffold(
         body: Center(
           child: Text('Chargement en cours !'),
+        ),
+      );
+    } else if (isFinish) {
+      return const Scaffold(
+        body: Center(
+          child: Text('Merci d\'avoir joué !'),
         ),
       );
     }
@@ -128,6 +136,8 @@ class _Game extends State<Game> {
         actualQuestion = questions.removeLast();
         currentPlayer = widget.players[random.nextInt(widget.players.length)];
       });
+    } else {
+      setState(() => isFinish = true);
     }
   }
 }
