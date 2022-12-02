@@ -14,4 +14,4 @@ Cette application a été réalisée pour la Nuit de l'Info 2022.
 docker compose up
 ```
 
-Rendez-vous sur [localhost:80](localhost:80).
+Rendez-vous sur [localhost:8080](localhost:8080).
